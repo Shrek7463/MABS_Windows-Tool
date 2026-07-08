@@ -46,6 +46,13 @@ int main() {
         free(result);
     }
 
+    // Install Git (needed for using scoop)
+    result = run_powershell_command("scoop install main/git");
+    if (result) {
+        printf("%s\n", result);
+        free(result);
+    }
+
     // Add extras bucket
     result = run_powershell_command("scoop bucket add extras");
     if (result) {
